@@ -1,79 +1,37 @@
-<!DOCTYPE html>
-<html>
+
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>untuk ko 🌸</title>
-<style>
-body{
-  margin:0;
-  overflow:hidden;
-  height:100vh;
-  background: linear-gradient(to top, #ff9a9e, #fad0c4);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family: 'Poppins', sans-serif;
-  color:white;
-  text-align:center;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/gift.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/index.css">
 
-h1{
-  font-size:28px;
-  z-index:2;
-  pointer-events:none;
-}
-
-.flower{
-  position:fixed;
-  top:-10px;
-  font-size:24px;
-  animation: fall linear infinite;
-}
-
-@keyframes fall{
-  0%{
-    transform: translateY(-10vh) rotate(0deg);
-    opacity:1;
-  }
-  100%{
-    transform: translateY(110vh) rotate(360deg);
-    opacity:0;
-  }
-}
-</style>
+  <!-- Document Title -->
+  <title>FLOWERS FOR SOMEONE</title>
 </head>
 
 <body>
+  <!-- Background -->
+  <div class="night"></div>
 
-<h1>🌸 untuk ko 🌸</h1>
+  <!-- Title -->
+  <h1 class="title"></h1>
 
-<!-- lagu Bersenja Gurau -->
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/jmvX6XyvCy0?autoplay=1&loop=1&playlist=jmvX6XyvCy0"
-frameborder="0"
-allow="autoplay">
-</iframe>
+  <!-- Button -->
+  <div style="position: absolute; top: 60vh; width: 100%; display: flex; justify-content: center;">
+    <a href="flower.html" class="btn">
+      <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+        <path
+          d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z">
+        </path>
+      </svg>
 
-<script>
-function createFlower(){
-  const flower=document.createElement("div");
-  flower.className="flower";
+      <span class="text">Open</span>
+    </a>
+  </div>
 
-  const flowers=["🌸","🌷","💮","🌺"];
-  flower.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
-
-  flower.style.left=Math.random()*100+"vw";
-  flower.style.animationDuration=(3+Math.random()*5)+"s";
-
-  document.body.appendChild(flower);
-
-  setTimeout(()=>{
-    flower.remove();
-  },8000);
-}
-
-setInterval(createFlower,400);
-</script>
-
+  <script src="js/index.js"></script>
 </body>
+
 </html>
