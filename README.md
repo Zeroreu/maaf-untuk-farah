@@ -2,101 +2,77 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untuk Farah 💖</title>
+<title>untuk ko 🌸</title>
 <style>
 body{
   margin:0;
-  font-family:'Poppins', sans-serif;
-  background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+  overflow:hidden;
+  height:100vh;
+  background: linear-gradient(to top, #ff9a9e, #fad0c4);
   display:flex;
   justify-content:center;
   align-items:center;
-  height:100vh;
-  overflow:hidden;
-  text-align:center;
+  font-family: 'Poppins', sans-serif;
   color:white;
+  text-align:center;
 }
-.gift-box{
-  font-size:80px;
-  cursor:pointer;
-  transition:0.3s;
+
+h1{
+  font-size:28px;
+  z-index:2;
+  pointer-events:none;
 }
-.gift-box:hover{
-  transform:scale(1.1);
-}
-#letter{
-  display:none;
-  max-width:90%;
-  animation:fadeIn 2s ease forwards;
-}
-button{
-  padding:12px 25px;
-  border:none;
-  border-radius:25px;
-  background:white;
-  color:#ff6f91;
-  font-weight:bold;
-  cursor:pointer;
-  margin-top:20px;
-}
-@keyframes fadeIn{
-  from{opacity:0}
-  to{opacity:1}
-}
-.heart{
+
+.flower{
   position:fixed;
-  color:#ff4d6d;
+  top:-10px;
   font-size:24px;
-  animation:fall 4s linear infinite;
+  animation: fall linear infinite;
 }
+
 @keyframes fall{
-  0%{transform:translateY(-10vh);}
-  100%{transform:translateY(110vh);}
+  0%{
+    transform: translateY(-10vh) rotate(0deg);
+    opacity:1;
+  }
+  100%{
+    transform: translateY(110vh) rotate(360deg);
+    opacity:0;
+  }
 }
 </style>
 </head>
+
 <body>
 
-<div id="giftScreen">
-  <div class="gift-box" onclick="openGift()">🎁</div>
-  <p>Klik kotak hadiahnya 🎁</p>
-</div>
+<h1>🌸 untuk ko 🌸</h1>
 
-<div id="letter" style="display:none;">
-  <iframe style="border-radius:12px"
-    src="https://www.youtube.com/embed/kEXAMPLE?autoplay=1&loop=1"
-    width="300"
-    height="80"
-    frameborder="0"
-    allow="autoplay; encrypted-media">
-  </iframe>
-  <p id="text">
-farah...  
-
-akhir" ini aku sadar kalau aku kurang menghargai ko,  
-padahal ko itu luar biasa, perhatian ko itu bukan hal kecil  
-aku minta maaf kalau aku bikin ko ngerasa kurang dihargai  
-dan aku mau berubah, jadi versi yang lebih baik  
-aku harap ko masih mau di sini 💖
-  </p>
-  <button onclick="love()">maafin aku?</button>
-</div>
+<!-- lagu Bersenja Gurau -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/jmvX6XyvCy0?autoplay=1&loop=1&playlist=jmvX6XyvCy0"
+frameborder="0"
+allow="autoplay">
+</iframe>
 
 <script>
-function openGift(){
-  document.getElementById("giftScreen").style.display="none";
-  document.getElementById("letter").style.display="block";
+function createFlower(){
+  const flower=document.createElement("div");
+  flower.className="flower";
+
+  const flowers=["🌸","🌷","💮","🌺"];
+  flower.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
+
+  flower.style.left=Math.random()*100+"vw";
+  flower.style.animationDuration=(3+Math.random()*5)+"s";
+
+  document.body.appendChild(flower);
+
+  setTimeout(()=>{
+    flower.remove();
+  },8000);
 }
 
-function love(){
-  for(let i=0;i<20;i++){
-    let heart=document.createElement("div");
-    heart.className="heart";
-    heart.style.left=Math.random()*100+"vw";
-    heart.innerHTML="❤️";
-    document.body.appendChild(heart);
-  }
-}
+setInterval(createFlower,400);
 </script>
 
 </body>
